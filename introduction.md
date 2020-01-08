@@ -5,4 +5,5 @@
 * The @Controller annotation is used to mark the class as the controller in Spring 3.
 * The @RequestMapping annotation is used to map the request url. It is applied on the method.
 
-![Spring_Flow](https://codenuclear.com/wp-content/uploads/2017/08/Spring_Flow.jpg, "Spring_Flow")
+![Spring_Flow](https://codenuclear.com/wp-content/uploads/2017/08/Spring_Flow.jpg "Spring_Flow")
+

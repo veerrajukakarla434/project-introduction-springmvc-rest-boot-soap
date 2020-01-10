@@ -65,3 +65,53 @@ The following steps describe a typical Spring MVC REST workflow:
   * Spring has a list of HttpMessageConverters registered in the background. 
   * The responsibility of the HTTPMessageConverter is to convert the request body to a specific class and back to the response body again, depending on a predefined mime type. 
   * Every time an issued request hits @ResponseBody, Spring loops through all registered HTTPMessageConverters seeking the first that fits the given mime type and class, and then uses it for the actual           conversion.
+    
+#### Code Examples
+
+Notice-1 
+
+```Java
+
+@Controller
+@RequestMapping("/employee-module")
+public class EmployeeController 
+{
+    @Autowired
+    EmployeeManager manager;
+ 
+    @RequestMapping(value = "/getAllEmployees", method = RequestMethod.GET)
+    public String getAllEmployees(Model model)
+    {
+        model.addAttribute("employees", manager.getAllEmployees());
+        return "employeesListDisplay";
+    }
+}
+
+```
+ 
+Notice-2
+
+```Java
+@Controller
+
+@RequestMapping("employees")
+
+public class EmployeeController {
+
+    Employee employee = new Employee();
+
+    @RequestMapping(value = "/{name}", method = RequestMethod.GET, produces = "application/json")
+
+    public @ResponseBody Employee getEmployeeInJSON(@PathVariable String name) {
+
+       employee.setName(name);
+
+       employee.setEmail("employee1@genuitec.com");
+
+    return employee; 
+
+    }
+```
+    
+  
+  

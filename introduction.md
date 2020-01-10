@@ -52,9 +52,16 @@ The following steps describe a typical Spring MVC REST workflow:
 
 * In Diagram-3, notice that in the traditional workflow the ModelAndView object is forwarded from the controller to the client. Spring lets you return data directly from the controller, without looking for a view, using the @ResponseBody annotation on a method. Beginning with Version 4.0, this process is simplified even further with the introduction of the @RestController annotation. Each approach is explained below.
 
+#### Using the @ResponseBody Annotation
+
+* When you use the @ResponseBody annotation on a method, Spring converts the return value and writes it to the HTTP response automatically. Each method in the Controller class must be annotated with @ResponseBody.
 
 #### Diagram-4
 
 ![3.x-diagram](https://resources.cloud.genuitec.com/wp-content/uploads/2015/09/3.x-diagram.png "3.x-diagram")
 
+* Behind the Scenes
 
+  * Spring has a list of HttpMessageConverters registered in the background. 
+  * The responsibility of the HTTPMessageConverter is to convert the request body to a specific class and back to the response body again, depending on a predefined mime type. 
+  * Every time an issued request hits @ResponseBody, Spring loops through all registered HTTPMessageConverters seeking the first that fits the given mime type and class, and then uses it for the actual           conversion.

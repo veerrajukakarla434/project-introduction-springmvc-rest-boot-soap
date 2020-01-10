@@ -28,3 +28,33 @@
 
 * **Step 5:** Finally DispatcherServlet will pass the Model object to the View page to display the result.
 
+
+#### Spring MVC Framework and REST
+
+* Spring’s annotation-based MVC framework simplifies the process of creating RESTful web services. 
+* The key difference between a traditional Spring MVC controller and the RESTful web service controller is the way the HTTP response body is created. While the traditional MVC controller relies on the View technology, the RESTful web service controller simply returns the object and the object data is written directly to the HTTP response as JSON/XML. 
+
+
+#### Diagram-3
+
+![PPnvoNS](http://i.imgur.com/PPnvoNS.png "PPnvoNS")
+
+
+### Spring MVC REST Workflow
+
+The following steps describe a typical Spring MVC REST workflow:
+
+* The client sends a request to a web service in URI form.
+* The request is intercepted by the DispatcherServlet which looks for Handler Mappings and its type.
+  * The Handler Mappings section defined in the application context file tells DispatcherServlet which strategy to use to find controllers based on the incoming request.
+  * Spring MVC supports three different types of mapping request URIs to controllers: annotation, name conventions, and explicit mappings.
+* Requests are processed by the Controller and the response is returned to the DispatcherServlet which then dispatches to the view. 
+
+* In Diagram-3, notice that in the traditional workflow the ModelAndView object is forwarded from the controller to the client. Spring lets you return data directly from the controller, without looking for a view, using the @ResponseBody annotation on a method. Beginning with Version 4.0, this process is simplified even further with the introduction of the @RestController annotation. Each approach is explained below.
+
+
+#### Diagram-4
+
+![3.x-diagram](https://resources.cloud.genuitec.com/wp-content/uploads/2015/09/3.x-diagram.png "3.x-diagram")
+
+

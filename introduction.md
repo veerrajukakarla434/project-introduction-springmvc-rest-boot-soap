@@ -76,8 +76,8 @@ Notice-1
 @RequestMapping("/employee-module")
 public class EmployeeController 
 {
-    @Autowired
-    EmployeeManager manager;
+    
+    EmployeeManager manager = new EmployeeManager();
  
     @RequestMapping(value = "/getAllEmployees", method = RequestMethod.GET)
     public String getAllEmployees(Model model)
@@ -113,5 +113,43 @@ public class EmployeeController {
     }
 ```
     
-  
-  
+#### Using the @RestController Annotation
+
+* Spring 4.0 introduced @RestController, a specialized version of the controller which is a convenience annotation that does nothing more than add the @Controller and @ResponseBody annotations. By annotating the controller class with @RestController annotation, you no longer need to add @ResponseBody to all the request mapping methods.  
+ 
+Diagram-5
+
+![4.x-diagram](https://resources.cloud.genuitec.com/wp-content/uploads/2015/09/4.x-diagram.png  "4.x-diagram")
+
+
+* To use @RestController in our example, all we need to do is modify the @Controller to @RestController and remove the @ResponseBody from each method.
+
+Notice-3
+
+```Java
+@RestController
+
+@RequestMapping("employees")
+
+public class EmployeeController {
+
+    Employee employee = new Employee();
+
+    @RequestMapping(value = "/{name}", method = RequestMethod.GET, produces = "application/json")
+
+    public Employee getEmployeeInJSON(@PathVariable String name) {
+
+       employee.setName(name);
+
+       employee.setEmail("employee1@genuitec.com");
+
+       return employee;
+
+    }
+```
+* Note that we no longer need to add the @ResponseBody to the request mapping methods. After making the changes, running the application on the server again results in the same output as before.
+
+#### Conclusion
+
+* As you can see, using @RestController is quite simple and is the preferred method for creating MVC RESTful web services starting from Spring v4.0. 
+

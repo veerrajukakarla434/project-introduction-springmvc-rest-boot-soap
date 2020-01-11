@@ -163,7 +163,7 @@ The key difference between @RequestParam and @PathVariable is that @RequestParam
 the values of the query parameters where as @PathVariable used for accessing the values from the URI template.
 ```
 
-## That is the different annotations from Spring and JAX-RS
+## This is the different annotations from Spring and JAX-RS
 
 **SPRING ANNOTATION**|**JAX-RS ANNOTATION**
 --------------------|------------------

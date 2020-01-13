@@ -219,8 +219,9 @@ GET http://base-url/students?grade=10    OR
 #### Object/Datastore Mapping
 
 **JPA**
-**JPA**|**MongoDB**|**Neo4j**
---------------------|------------------|------------------
+
+```java
+
 @Entity 
 @Table(name="TUSR")
 public class User {
@@ -234,8 +235,14 @@ public class User {
   private Date lastLogin;
 
 ...
-} |
+} 
 
+```
+
+
+**MongoDB**
+
+```Java
 @Document(
 collection="usr")
 public class User {
@@ -249,20 +256,8 @@ public class User {
   private Date lastLogin;
 
  ...
-} |
-@NodeEntity
-public class User {
-
-  @GraphId
-  Long id;
-
-
-  private String name;
-
-  private Date lastLogin;
-
-...
-}
+} 
+```
 
 
 ## Difference Between Hibernate vs JPA

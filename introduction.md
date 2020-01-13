@@ -243,8 +243,7 @@ public class User {
 **MongoDB**
 
 ```Java
-@Document(
-collection="usr")
+@Document(collection="usr")
 public class User {
 
   @Id

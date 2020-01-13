@@ -205,8 +205,89 @@ GET http://base-url/students?grade=10    OR
   * Any optional attributes should be added as query param
   * params used for filtering data are usually used as query param
  
+ 
+ 
+## Spring Data – One API To Rule Them All ?
+
+#### Spring Data is a high level SpringSource project whose purpose is to unify and ease the access to different kinds of persistence stores, both relational database systems and NoSQL data stores.
+
+![spring_data_overview_small](https://res.infoq.com/articles/spring-data-intro/en/resources/spring_data_overview_small.jpg "spring_data_overview_small")
+
+* With every kind of persistence store, your repositories (a.k.a. DAOs, or Data Access Objects) typically offer CRUD (Create-Read-Update-Delete ) operations on single domain objects, finder methods, sorting and pagination. Spring Data provides generic interfaces for these aspects (CrudRepository, PagingAndSortingRepository) as well as persistence store specific implementations.
 
 
+#### Object/Datastore Mapping
+
+**JPA**
+**JPA**|**MongoDB**|**Neo4j**
+--------------------|------------------|------------------
+@Entity 
+@Table(name="TUSR")
+public class User {
+
+  @Id
+  private String id;
+
+  @Column(name="fn")
+  private String name;
+
+  private Date lastLogin;
+
+...
+} |
+
+@Document(
+collection="usr")
+public class User {
+
+  @Id
+  private String id;
+
+  @Field("fn")
+  private String name;
+
+  private Date lastLogin;
+
+ ...
+} |
+@NodeEntity
+public class User {
+
+  @GraphId
+  Long id;
+
+
+  private String name;
+
+  private Date lastLogin;
+
+...
+}
+
+
+## Difference Between Hibernate vs JPA
+
+* Hibernate is a framework that is known as the Hibernate ORM framework. Hibernate which is known as Hibernate ORM is a framework that was designed by Red Hat and its initial release happened on 23 May 2007 is an object-relational mapping tool for the Java language. It is written in Java and it supports a cross-platform JVM. Its licensing is done under GNU Lesser General Public. JPA is known as Java persistence API. JPA which is actually known as Java Persistence Application Programming Interface OR Java application programming interface is used to manage the relational data. JPA is basically is a specification. It deals with the object or relational metadata. The language of the JPA is JPQL (Java Persistence Query Language).
+
+#### Hibernate
+
+* Hibernate’s primary features are to map the Java classes to database tables. Some key feature of Hibernate is given below:
+
+  * It’s an implementation of JPA guidelines.
+  * It helps to map Java classes to database tables and Java data types to SQL data types.
+  * Hibernate is the provider of JPA.
+  
+#### JPA
+
+* The initial release of JPA happened on 11 May 2006. Some Key features of JPA are given below:
+
+  * JPA is not an implementation it is only a specification.
+  * It is a set of rules and guidelines for setting interfaces for the implementation of object-relational mapping.
+  * It requires a small number of classes and interfaces.
+  * It supports easier cleaner and standardized object-relational mapping.
+  * It supports polymorphism and inheritance.
+  * In this dynamic and named queries can be added.
+  * In one line if we want to define the Hibernate and JPA then we can say that Hibernate is the implementation of all the JPA guidelines.  
 
 
 

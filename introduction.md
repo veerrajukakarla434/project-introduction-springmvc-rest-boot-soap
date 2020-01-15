@@ -289,7 +289,7 @@ public class User {
 * Download MongoDB using below Link : https://www.mongodb.com/download-center/community
 * Download robo3t for MongoDB user interface : https://robomongo.org/download
 
-* **Step1:**  
+* **Steps:**  
   * once installed above below location and run below two .exe files
   * C:\Program Files\MongoDB\Server\4.2\bin   and run
     mongod.exe then mongo.exe
@@ -306,10 +306,11 @@ db.createUser(
     roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
   }
 )  
+```
 
+**OR you can you another type of user:**
 
-OR you can you another type of user
-
+```Java
 use MongoDBPOC
 
 db.createUser(
@@ -320,7 +321,14 @@ db.createUser(
   }
 )
 
-```  
+```
+
+* Once you created user then open robo3t and open manage connection
+  
+Please refer below images :
+
+![mongo_user_creation](https://github.com/privatevkakarla/project-introduction-springmvc-rest-boot-soap/blob/master/images/mongo_user_creation.JPG "mongo_user_creation")
+
 
 
 

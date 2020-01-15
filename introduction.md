@@ -325,14 +325,26 @@ db.createUser(
 
 * Once you created user then open robo3t and open manage connection
   
-Please refer below images :
+#### Please refer below images :
 
 ![mongo_user_creation](https://github.com/privatevkakarla/project-introduction-springmvc-rest-boot-soap/blob/master/images/mongo_user_creation.JPG "mongo_user_creation")
 
 
 
 
+#### Open robo3t and Manage User and create User:
 
+![robo3t](https://github.com/privatevkakarla/project-introduction-springmvc-rest-boot-soap/blob/master/images/robo3t.JPG "robo3t")
+
+![user](https://github.com/privatevkakarla/project-introduction-springmvc-rest-boot-soap/blob/master/images/user.JPG "user")
+
+#### Add Authentication User
+
+![Authentication](https://github.com/privatevkakarla/project-introduction-springmvc-rest-boot-soap/blob/master/images/Authentication.JPG "Authentication")
+
+#### test created user with db connection
+
+![checkdb_test](https://github.com/privatevkakarla/project-introduction-springmvc-rest-boot-soap/blob/master/images/checkdb_test.JPG "checkdb_test")
 
 
 

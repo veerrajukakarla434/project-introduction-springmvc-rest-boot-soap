@@ -283,5 +283,50 @@ public class User {
   * In this dynamic and named queries can be added.
   * In one line if we want to define the Hibernate and JPA then we can say that Hibernate is the implementation of all the JPA guidelines.  
 
+#### MongoDB installation and UserCreation:
+
+
+* Download MongoDB using below Link : https://www.mongodb.com/download-center/community
+* Download robo3t for MongoDB user interface : https://robomongo.org/download
+
+* **Step1:**  
+  * once installed above below location and run below two .exe files
+  * C:\Program Files\MongoDB\Server\4.2\bin   and run
+    mongod.exe then mongo.exe
+  * Using mongo.exe window you should create user
+  
+```Java
+
+use MongoDBPOC123
+
+db.createUser(
+  {
+    user: "veer",
+    pwd: "veer123",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)  
+
+
+OR you can you another type of user
+
+use MongoDBPOC
+
+db.createUser(
+  {
+    user: "veer",
+    pwd: "veer123",
+    roles: [ { role: "userAdmin", db: "MongoDBPOC" } ]
+  }
+)
+
+```  
+
+
+
+
+
+
+
 
 

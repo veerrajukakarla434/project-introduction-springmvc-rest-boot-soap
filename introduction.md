@@ -9,7 +9,7 @@
 
 #### Diagram-1
 
-![Spring_Flow](https://codenuclear.com/wp-content/uploads/2017/08/Spring_Flow.jpg "Spring_Flow")
+![image](https://user-images.githubusercontent.com/40323661/152082609-c7536444-8332-4aee-bbe2-dcfaa84cf06c.png)
 
 #### Diagram-2 
 
@@ -31,7 +31,7 @@
 
 #### Spring MVC Framework and REST
 
-* Springís annotation-based MVC framework simplifies the process of creating RESTful web services. 
+* Spring‚Äôs annotation-based MVC framework simplifies the process of creating RESTful web services. 
 * The key difference between a traditional Spring MVC controller and the RESTful web service controller is the way the HTTP response body is created. While the traditional MVC controller relies on the View technology, the RESTful web service controller simply returns the object and the object data is written directly to the HTTP response as JSON/XML. 
 
 
@@ -167,18 +167,18 @@ the values of the query parameters where as @PathVariable used for accessing the
 
 **SPRING ANNOTATION**|**JAX-RS ANNOTATION**
 --------------------|------------------
-@RequestMapping(path = ì/troopersî | @Path(ì/troopersî)
+@RequestMapping(path = ‚Äú/troopers‚Äù | @Path(‚Äú/troopers‚Äù)
 @PostMapping	| @POST
 @PutMapping	| @PUT
 @GetMapping	| @GET
 @DeleteMapping	| @DELETE
 @ResponseBody	| N/A
 @RequestBody	| N/A
-@PathVariable(ìidî)	| @PathParam(ìidî)
-@RequestParam(ìxyzî)	| @QueryParam(ëxyzî)
-@RequestParam(value=îxyzî)	| @FormParam(ìxyzî)
-@RequestMapping(produces = {ìapplication/jsonî}) | 	@Produces(ìapplication/jsonî)
-@RequestMapping(consumes = {ìapplication/jsonî}) |	@Consumes(ìapplication/jsonî)
+@PathVariable(‚Äúid‚Äù)	| @PathParam(‚Äúid‚Äù)
+@RequestParam(‚Äúxyz‚Äù)	| @QueryParam(‚Äòxyz‚Äù)
+@RequestParam(value=‚Äùxyz‚Äù)	| @FormParam(‚Äúxyz‚Äù)
+@RequestMapping(produces = {‚Äúapplication/json‚Äù}) | 	@Produces(‚Äúapplication/json‚Äù)
+@RequestMapping(consumes = {‚Äúapplication/json‚Äù}) |	@Consumes(‚Äúapplication/json‚Äù)
 
 #### Diff between PathParam and QueryParam ?
 
@@ -188,12 +188,12 @@ the values of the query parameters where as @PathVariable used for accessing the
 PathParam example
 GET http://base-url/students/{roll-number}  OR
 
-@RequestMapping(path = ì/base-url/students/{roll-number}î  == @Path(ì/base-url/students/{roll-number}î)
+@RequestMapping(path = ‚Äú/base-url/students/{roll-number}‚Äù  == @Path(‚Äú/base-url/students/{roll-number}‚Äù)
 
 QueryParam example
 GET http://base-url/students?grade=10    OR
 
-@RequestMapping(path = ì/base-url/students/{roll-number}î  == @Path(ì/base-url/students/{roll-number}î)
+@RequestMapping(path = ‚Äú/base-url/students/{roll-number}‚Äù  == @Path(‚Äú/base-url/students/{roll-number}‚Äù)
 ```
 
 * **When to use @PathParam vs @QueryParam**
@@ -207,7 +207,7 @@ GET http://base-url/students?grade=10    OR
  
  
  
-## Spring Data ñ One API To Rule Them All ?
+## Spring Data ‚Äì One API To Rule Them All ?
 
 #### Spring Data is a high level SpringSource project whose purpose is to unify and ease the access to different kinds of persistence stores, both relational database systems and NoSQL data stores.
 
@@ -265,9 +265,9 @@ public class User {
 
 #### Hibernate
 
-* Hibernateís primary features are to map the Java classes to database tables. Some key feature of Hibernate is given below:
+* Hibernate‚Äôs primary features are to map the Java classes to database tables. Some key feature of Hibernate is given below:
 
-  * Itís an implementation of JPA guidelines.
+  * It‚Äôs an implementation of JPA guidelines.
   * It helps to map Java classes to database tables and Java data types to SQL data types.
   * Hibernate is the provider of JPA.
   
